@@ -29,90 +29,90 @@ at the top of your source code. (See Example, below).
 
 CLASS: SynDateTime (Public)
 
-ENUMERATION(S):
-Public Enumeration DayOfWeek
-Sunday ,0
-Monday
-Tuesday
-Wednesday
-Thursday
-Friday
-Saturday
-Private Enumerations TimeValueType
-Millisecond ,0
-Second
-Minute
-Hour
-Day
-Month
-Year
+ENUMERATION(S): <br/>
+Public Enumeration DayOfWeek <br/>
+Sunday ,0 <br/>
+Monday <br/>
+Tuesday <br/>
+Wednesday <br/>
+Thursday <br/>
+Friday <br/>
+Saturday <br/>
+Private Enumerations TimeValueType <br/>
+Millisecond ,0 <br/>
+Second <br/>
+Minute <br/>
+Hour <br/>
+Day <br/>
+Month <br/>
+Year <br/>
 
-CONSTRUCTOR:
-SynDateTime (Public)
-Overloaded. Initializes a new instance of the SynDateTime structure.
+CONSTRUCTOR: <br/>
+SynDateTime (Public) <br/>
+Overloaded. Initializes a new instance of the SynDateTime structure. <br/>
 
-PROPERTIES:
-Date
-Gets the date component of this instance.
-Day
-Gets the day of the month represented by this instance.
-DayOfWeek
-Gets the day of the week represented by this instance.
-DayOfYear
-Gets the day of the year represented by this instance.
-Hour
-Gets the hour component of the date represented by this instance.
-Millisecond
-Gets the milliseconds component of the date represented by this instance.
-Minute
-Gets the minute component of the date represented by this instance.
-Month
-Gets the month component of the date represented by this instance.
-Now
-Gets a SynDateTime object that is set to the current date and time on this computer, expressed as the local time.
-Second
-Gets the seconds component of the date represented by this instance.
-SynDate
-Gets the date as a Synergy decimal value expressed as YYYYMMDD (d8).
-TimeOfDay
-Gets the time of day for this instance.
-Today
-Gets the current date.
-Year
-Gets the year component of the date represented by this instance.
+PROPERTIES: <br/>
+Date <br/>
+Gets the date component of this instance. <br/>
+Day <br/>
+Gets the day of the month represented by this instance. <br/>
+DayOfWeek <br/>
+Gets the day of the week represented by this instance. <br/>
+DayOfYear <br/>
+Gets the day of the year represented by this instance. <br/>
+Hour <br/>
+Gets the hour component of the date represented by this instance. <br/>
+Millisecond <br/>
+Gets the milliseconds component of the date represented by this instance. <br/>
+Minute <br/>
+Gets the minute component of the date represented by this instance. <br/>
+Month <br/>
+Gets the month component of the date represented by this instance. <br/>
+Now <br/>
+Gets a SynDateTime object that is set to the current date and time on this computer, expressed as the local time. <br/>
+Second <br/>
+Gets the seconds component of the date represented by this instance. <br/>
+SynDate <br/>
+Gets the date as a Synergy decimal value expressed as YYYYMMDD (d8). <br/>
+TimeOfDay <br/>
+Gets the time of day for this instance. <br/>
+Today <br/>
+Gets the current date. <br/>
+Year <br/>
+Gets the year component of the date represented by this instance. <br/>
 
 
-METHOD(S):
-AddDays (Public)
-Adds the specified number of days to the value of this instance.
-AddHours (Public)
-Adds the specified number of hours to the value of this instance.
-AddMilliseconds (Public)
-Adds the specified number of milliseconds to the value of this instance.
-AddMinutes (Public)
-Adds the specified number of minutes to the value of this instance.
-AddMonths (Public)
-Adds the specified number of months to the value of this instance.
-AddSeconds (Public)
-Adds the specified number of seconds to the value of this instance.
-AddYears (Public)
-Adds the specified number of years to the value of this instance.
-DaysInMonth (Public Static)
-Returns the number of days in the specified month and year.
-IsLeapYear (Public Static)
-Returns an indication whether the specified year is a leap year.
-ToLongDateString (Public)
-Converts the value of this instance to its equivalent long date string representation.
-ToLongTimeString (Public)
-Converts the value of this instance to its equivalent long time string representation.
-ToShortDateString (Public)
-Converts the value of this instance to its equivalent short date string representation.
-ToShortTimeString (Public)
-Converts the value of this instance to its equivalent short time string representation.
-ToString (Public)
-Converts the value of this instance to its equivalent string representation.
-DateInvalid (Private)
-Determines whether the current instance represents a valid date.
+METHOD(S): <br/>
+AddDays (Public) <br/>
+Adds the specified number of days to the value of this instance. <br/>
+AddHours (Public) <br/>
+Adds the specified number of hours to the value of this instance. <br/>
+AddMilliseconds (Public) <br/>
+Adds the specified number of milliseconds to the value of this instance. <br/>
+AddMinutes (Public) <br/>
+Adds the specified number of minutes to the value of this instance. <br/>
+AddMonths (Public) <br/>
+Adds the specified number of months to the value of this instance. <br/>
+AddSeconds (Public) <br/>
+Adds the specified number of seconds to the value of this instance. <br/>
+AddYears (Public) <br/>
+Adds the specified number of years to the value of this instance. <br/>
+DaysInMonth (Public Static) <br/>
+Returns the number of days in the specified month and year. <br/>
+IsLeapYear (Public Static) <br/>
+Returns an indication whether the specified year is a leap year. <br/>
+ToLongDateString (Public) <br/>
+Converts the value of this instance to its equivalent long date string representation. <br/>
+ToLongTimeString (Public) <br/>
+Converts the value of this instance to its equivalent long time string representation. <br/>
+ToShortDateString (Public) <br/>
+Converts the value of this instance to its equivalent short date string representation. <br/>
+ToShortTimeString (Public) <br/>
+Converts the value of this instance to its equivalent short time string representation. <br/>
+ToString (Public) <br/>
+Converts the value of this instance to its equivalent string representation. <br/>
+DateInvalid (Private) <br/>
+Determines whether the current instance represents a valid date. <br/>
 
 
 EXAMPLE(S):
@@ -121,21 +121,21 @@ The following program demonstrates the use of the SynDateTime class.
 
 ;; Program to demonstrate the SynDateTime class.
 
-import SynPSG.system
-main
-record
-myDT ,@SynDateTime
-endrecord
-proc
-open(1,o,"TT:")
-myDT = SynDateTime.Now
-writes(1, "Current date: "+myDT.ToString("d"))
-writes(1, "In 35 minutes it will be: " + myDT.AddMinutes(35).ToString())
-writes(1, "Note that the current date is still: " + myDT.ToString())
-writes(1, "Today is day "+%string(myDT.DayOfYear)+" of the year "+%string(myDT.Year))
-myDT = myDT.AddMonths(4)
-writes(1, "Four months from now, there will be "+%string(SynDateTime.DaysInMonth(myDT.Year,myDT.Month))+" days in the month.")
-writes(1, "In Synergy YYYYMMDD format, that date will be represented as "+%string(myDT.SynDate)+".")
-myDT = new SynDateTime(19991231)
-writes(1, "The last day of the last century was " + myDT.ToLongDateString())
+import SynPSG.system <br/>
+main <br/>
+record <br/>
+myDT ,@SynDateTime <br/>
+endrecord <br/>
+proc <br/>
+open(1,o,"TT:") <br/>
+myDT = SynDateTime.Now <br/>
+writes(1, "Current date: "+myDT.ToString("d")) <br/>
+writes(1, "In 35 minutes it will be: " + myDT.AddMinutes(35).ToString()) <br/>
+writes(1, "Note that the current date is still: " + myDT.ToString()) <br/>
+writes(1, "Today is day "+%string(myDT.DayOfYear)+" of the year "+%string(myDT.Year)) <br/>
+myDT = myDT.AddMonths(4) <br/>
+writes(1, "Four months from now, there will be "+%string(SynDateTime.DaysInMonth(myDT.Year,myDT.Month))+" days in the month.") <br/>
+writes(1, "In Synergy YYYYMMDD format, that date will be represented as "+%string(myDT.SynDate)+".") <br/>
+myDT = new SynDateTime(19991231) <br/>
+writes(1, "The last day of the last century was " + myDT.ToLongDateString()) <br/>
 endmain
